@@ -1934,7 +1934,7 @@ def readtrial(ds, planfolder, plannumber):
 
         print("Dose grid scaling: " + str(scale))
         
-        ofile = open('samplebinaryslicevalues.txt','w')
+        ofile = open(Outputf + "/%s/samplebinaryslicevalues.txt"%(patientfolder),'w')
         pixel_binary_block = bytes()
         currline = 0
         pixelvaluelist = []
