@@ -175,11 +175,15 @@ def main(temppatientfolder,inputfolder,outputfolder):
     Inputf = inputfolder
     Outputf = outputfolder
 
-    print("Pinnacle tar folder path: " + Inputf)
-    print("Current Patient: " + patientfolder)
+
     if not os.path.exists(Outputf+"%s"%(patientfolder)):
         os.makedirs(Outputf+"%s"%(patientfolder)) #Create folder for exported DICOM files if it does not already exist
 
+    sys.stdout = open(Outputf + "%s/log.txt"%patientfolder, "w")
+
+
+    print("Pinnacle tar folder path: " + Inputf)
+    print("Current Patient: " + patientfolder)
     print("Output location: " + Outputf) 
     
     structsopinstuid = pydicom.uid.generate_uid() 
